@@ -210,9 +210,9 @@ var elizaKeywords = [
   ]]
 ]],
 ["italiano", 0, [
- ["*", [
-     "goto xforeign",
-     "I told you before, I don't understand Italian."
+  ["*", [
+    "goto xforeign",
+    "I told you before, I don't understand Italian."
   ]]
 ]],
 ["espanol", 0, [

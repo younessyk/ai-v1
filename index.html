@@ -1,79 +1,24 @@
-<HTML>
-<HEAD>
-	<TITLE>JS - AI</TITLE>
-	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizabot.js"></SCRIPT>
-	<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript" SRC="elizadata.js"></SCRIPT>
+<html>
+<head>
+	<title>JS - AI</title>
+	<script src="js/elizabot.js"></script>
+	<script src="js/elizadata.js"></script>
+	<script src="js/annyang.js"></script>
+	<script src="js/rs.speech.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/app.js"></script>
+</head>
 
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-<!--
+<body onload="window.setTimeout('elizaReset()',100)">
 
-var eliza = new ElizaBot();
-var elizaLines = new Array();
+<h3>JS - AI</h3>
 
-var displayCols = 60;
-var displayRows = 20;
+<form onsubmit="elizaStep(); return false" id="form">
+	<p id="usr">gfg</p>
+	<p id="rpl">fg</p>	
+	<input type="text" id="input" autofocus>
+	<input type="submit" value="Talk">
+</form>
 
-function elizaReset() {
-	eliza.reset();
-	elizaLines.length = 0;
-	elizaStep();
-}
-
-function elizaStep() {
-	var f = document.forms.e_form;
-	var userinput = f.e_input.value;
-	if (eliza.quit) {
-		f.e_input.value = '';
-		if (confirm("This session is over.\nStart over?")) elizaReset();
-		f.e_input.focus();
-		return;
-	}
-	else if (userinput != '') {
-		var usr = 'YOU:   ' + userinput;
-		var rpl ='JS-AI: ' + eliza.transform(userinput);
-		elizaLines.push(usr);
-		elizaLines.push(rpl);
-		// display nicely
-		// (fit to textarea with last line free - reserved for extra line caused by word wrap)
-		var temp  = new Array();
-		var l = 0;
-		for (var i=elizaLines.length-1; i>=0; i--) {
-			l += 1 + Math.floor(elizaLines[i].length/displayCols);
-			if (l >= displayRows) break
-			else temp.push(elizaLines[i]);
-		}
-		elizaLines = temp.reverse();
-		f.e_display.value = elizaLines.join('\n');
-	}
-	else if (elizaLines.length == 0) {
-		// no input and no saved lines -> output initial
-		var initial = 'JS-AI: ' + eliza.getInitial();
-		elizaLines.push(initial);
-		f.e_display.value = initial + '\n';
-	}
-	f.e_input.value = '';
-	f.e_input.focus();
-}
-
-//-->
-</SCRIPT>
-</HEAD>
-
-<BODY TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0" STYLE="border:0" onload="window.setTimeout('elizaReset()',100)"><A NAME="top"></A>
-
-<CENTER>
-<P>&nbsp;</P>
-<H3>JS - AI</H3>
-<TABLE BORDER="0" CELLSPACING="10" CELLPADDING="0">
-<FORM NAME="e_form" onsubmit="elizaStep();return false">
-<TR><TD COLSPAN="2"><TEXTAREA NAME="e_display" COLS="60" ROWS="20"></TEXTAREA></TD></TR>
-<TR VALIGN="middle">
-	<TD><INPUT TYPE="text" NAME="e_input" SIZE="50"></TD>
-	<TD ALIGN="right"><INPUT TYPE="submit" VALUE="&nbsp;Talk&nbsp;"> <INPUT TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)"></TD>
-</TR>
-</FORM>
-</TABLE>
-</CENTER>
-
-</BODY>
-</HTML>
+</body>
+</html>
