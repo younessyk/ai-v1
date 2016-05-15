@@ -1,10 +1,10 @@
 var app = angular.module('CARLINE', ['ngRoute']);
 
 var speech = new rsSpeech();
-var eliza = new ElizaBot();
+var carline = new CarlineBot();
 
 app.config(function($routeProvider) {
-	
+
 	$routeProvider
 
 	.when('/', {

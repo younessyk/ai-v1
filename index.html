@@ -1,12 +1,12 @@
 <html ng-app="CARLINE">
 <head>
-	<title>JS - AI</title>
+	<title>CARLINE - V2 - Chatting Artificial Intelligence</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/paper.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<body ng-init="elizaReset()" ng-controller="homeCtrl">
+<body ng-init="carlineReset()" ng-controller="homeCtrl">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-2 col-hide-sm">
@@ -42,7 +42,7 @@
 	</div>
 
 	<nav class="navbar navbar-inverse navbar-fixed-bottom">
-		<form ng-submit="elizaStep()">
+		<form ng-submit="carlineStep()">
 			<div class="input-group">
 			<input type="text" id="input" class="form-control" placeholder="Write Your Answer Here ..." autofocus autocomplete="off">
       <span class="input-group-btn">
@@ -60,10 +60,10 @@
 	<script src="js/angular-local-storage.js"></script>
 	<script src="js/annyang.js"></script>
 	<script src="js/rs.speech.js"></script>
-	<script src="js/elizabot.js"></script>
-	<script src="js/elizadata.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/controllers.js"></script>
+	<script src="js/carlineMain.min.js"></script>
+	<script src="js/carlineData.min.js"></script>
+	<script src="js/app.min.js"></script>
+	<script src="js/controllers.min.js"></script>
 	<script src="js/animations.js"></script>
 
 </body>

@@ -7,28 +7,28 @@ app.controller('homeCtrl', function($scope, $anchorScroll, $location) {
     $anchorScroll();
   }
 
-	$scope.elizaReset = function() {
-		eliza.reset();
-		$scope.elizaStep();
+	$scope.carlineReset = function() {
+		carline.reset();
+		$scope.carlineStep();
 	}
 
   $scope.firstMsg = function () {
-    var fRpl = eliza.getInitial();
-    // speech.speak(fRpl);
+    var fRpl = carline.getInitial();
+    speech.speak(fRpl);
     $scope.talks.push({
       text: fRpl,
       usr: false
     });
   }
 
-	$scope.elizaStep = function() {
+	$scope.carlineStep = function() {
 		var inputTxt = document.getElementById('input');
 		var usrTxt = document.getElementById('usr');
 		var rplTxt = document.getElementById('rpl');
 
 		if (inputTxt.value != '') {
 			var usr = inputTxt.value;
-			var rpl = eliza.transform(inputTxt.value);
+			var rpl = carline.transform(inputTxt.value);
 			speech.speak(rpl);
 			$scope.talks.push({
 				text: usr,

@@ -1,15 +1,15 @@
-// data for elizabot.js
-// entries prestructured as layed out in Weizenbaum's description 
+// data for carlinebot.js
+// entries prestructured as layed out in Weizenbaum's description
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
-var elizaInitials = [
+var carlineInitials = [
 "How do you do.  Please tell me your problem.",
 // additions (not original)
 "Please tell me what's been bothering you.",
 "Is something troubling you ?"
 ];
 
-var elizaFinals = [
+var carlineFinals = [
 "Goodbye.  It was nice talking to you.",
 // additions (not original)
 "Goodbye.  This was really a nice talk.",
@@ -18,7 +18,7 @@ var elizaFinals = [
 "Maybe we could discuss this moreover in our next session ?   Goodbye."
 ];
 
-var elizaQuits = [
+var carlineQuits = [
 "bye",
 "goodbye",
 "done",
@@ -26,7 +26,7 @@ var elizaQuits = [
 "quit"
 ];
 
-var elizaPres = [
+var carlinePres = [
 "dont", "don't",
 "cant", "can't",
 "wont", "won't",
@@ -47,7 +47,7 @@ var elizaPres = [
 "equivalent", "alike"
 ];
 
-var elizaPosts = [
+var carlinePosts = [
 "am", "are",
 "your", "my",
 "me", "you",
@@ -59,7 +59,7 @@ var elizaPosts = [
 "i'm", "you are"
 ];
 
-var elizaSynons = {
+var carlineSynons = {
 "be": ["am", "is", "are", "was"],
 "belief": ["feel", "think", "believe", "wish"],
 "cannot": ["can't"],
@@ -70,7 +70,7 @@ var elizaSynons = {
 "sad": ["unhappy", "depressed", "sick"]
 };
 
-var elizaKeywords = [
+var carlineKeywords = [
 
 /*
   Array of
@@ -598,7 +598,7 @@ var elizaKeywords = [
 
 // regexp/replacement pairs to be performed as final cleanings
 // here: cleanings for multiple bots talking to each other
-var elizaPostTransforms = [
+var carlinePostTransforms = [
 	/ old old/g, " old",
 	/\bthey were( not)? me\b/g, "it was$1 me",
 	/\bthey are( not)? me\b/g, "it is$1 me",
